@@ -3,7 +3,7 @@
 FRDM-MCXN947 を Arduino IDE (`arduino:zephyr_contrib`, ArduinoCore-zephyr) 上で
 NXP LinkServer 経由でアップロードできるようにするローカルパッチです。
 
-背景・詳しい手順はこちら: (Qiita記事のURLをここに)
+背景・詳しい手順はこちら: https://qiita.com/teddokano/items/50a49815526f66ca692c
 
 ## 動作環境
 
