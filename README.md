@@ -1,27 +1,27 @@
 # frdm-mcxn947-linkserver-patch
 
-FRDM-MCXN947 を Arduino IDE (`arduino:zephyr_contrib`, ArduinoCore-zephyr) 上で
-NXP LinkServer 経由でアップロードできるようにするローカルパッチです。
+A local patch that enables uploading to the FRDM-MCXN947 via NXP LinkServer
+from the Arduino IDE (`arduino:zephyr_contrib`, ArduinoCore-zephyr).
 
-背景・詳しい手順はこちら: https://qiita.com/teddokano/items/50a49815526f66ca692c
+Background and detailed steps: https://qiita.com/teddokano/items/50a49815526f66ca692c
 
-## 動作環境
+## Environment
 
 - macOS
 - Arduino IDE 2.x
-- `arduino:zephyr_contrib` 0.56.0 (バージョンが異なる場合はコピー先パスを読み替えてください)
-- [NXP LinkServer](https://www.nxp.com/linkserver) インストール済みであること
+- `arduino:zephyr_contrib` 0.56.0 (if your version differs, adjust the destination path accordingly)
+- [NXP LinkServer](https://www.nxp.com/linkserver) must already be installed
 
-## インストール方法
+## Installation
 
-このリポジトリの3ファイルを、以下のディレクトリにそのままコピーしてください。
+Copy the 3 files in this repository directly into the following directory.
 
 ```
 ~/Library/Arduino15/packages/arduino/hardware/zephyr_contrib/0.56.0/
-├── boards.local.txt          ← コピー
-├── platform.local.txt        ← コピー
+├── boards.local.txt          ← copy
+├── platform.local.txt        ← copy
 └── tools/
-    └── upload_linkserver.sh  ← コピー(実行権限を付与すること)
+    └── upload_linkserver.sh  ← copy (make sure to grant execute permission)
 ```
 
 ```bash
@@ -33,23 +33,27 @@ cp tools/upload_linkserver.sh \
 chmod +x ~/Library/Arduino15/packages/arduino/hardware/zephyr_contrib/0.56.0/tools/upload_linkserver.sh
 ```
 
-コピー後、Arduino IDEで `Tools > Programmer` から何か選択し、`Tools > Burn Bootloader` を実行してください。
+After copying, in the Arduino IDE select any option under `Tools > Programmer`,
+then run `Tools > Burn Bootloader`.
 
-## 他のボードで使う場合
+## Using this with other boards
 
-`boards.local.txt` と `tools/upload_linkserver.sh` 内の `MCXN947:FRDM-MCXN947` を、
-`LinkServer devices` コマンドで確認した対象ボードの識別子に置き換えてください。
+Replace `MCXN947:FRDM-MCXN947` in `boards.local.txt` and
+`tools/upload_linkserver.sh` with the identifier for your target board, which
+you can check with the `LinkServer devices` command.
 
-## Windows対応について
+## About Windows support
 
-このパッチは macOS のみ検証済みです。Windows対応には `platform.local.txt` に
-`tools.linkserver.upload.pattern.windows` の追加と、`upload_linkserver.bat` の用意が必要です。
+This patch has only been verified on macOS. Supporting Windows would require
+adding `tools.linkserver.upload.pattern.windows` to `platform.local.txt` and
+providing an `upload_linkserver.bat` script.
 
-## 詳しい背景・トラブルシューティング
+## Background and troubleshooting details
 
-なぜこのパッチが必要か、作業中に踏んだ落とし穴などは、こちらの記事にまとめています。
+The reasoning behind why this patch is needed, along with the pitfalls
+encountered along the way, are documented in the article below.
 
-👉 (Qiita記事のURLをここに)
+👉 (Qiita article URL here)
 
 ## License
 
