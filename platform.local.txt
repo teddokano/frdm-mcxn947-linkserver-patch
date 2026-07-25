@@ -1,0 +1,11 @@
+tools.linkserver.path=
+tools.linkserver.cmd=
+tools.linkserver.upload.params.verbose=
+tools.linkserver.upload.params.quiet=
+tools.linkserver.upload.pattern={runtime.platform.path}/tools/upload_linkserver.sh "{build.path}/{build.project_name}.{upload.extension}" {upload.address}
+
+tools.linkserver.bootloader.params.verbose=
+tools.linkserver.bootloader.params.quiet=
+tools.linkserver.bootloader.pattern={runtime.platform.path}/tools/upload_linkserver.sh "{runtime.platform.path}/firmwares/{bootloader.file}"
+
+tools.linkserver.erase.pattern=

@@ -1,0 +1,4 @@
+frdm_mcxn947.upload.tool=linkserver
+frdm_mcxn947.upload.tool.default=linkserver
+frdm_mcxn947.bootloader.tool=linkserver
+frdm_mcxn947.bootloader.tool.default=linkserver
